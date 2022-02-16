@@ -21,10 +21,12 @@ android {
                 arguments = [
                         //必须，告知RxHttp你依赖的okhttp版本，目前已适配 v3.12.0 - v4.9.0版本  (v4.3.0除外)
                         rxhttp_okhttp: '4.9.0',
-                        rxhttp_rxjava: 'rxjava3'
+                        rxhttp_rxjava: '3.1.1',
+                        rxhttp_package: 'rxhttp',  //指定RxHttp类包名，可随意指定
                 ]
             }
         }
+
     }
 
     buildTypes {
@@ -52,25 +54,6 @@ android {
         exclude 'META-INF/*.kotlin_module'
     }
 
-    android {
-        //必须，java 8或更高
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
-        }
-        defaultConfig {
-            javaCompileOptions {
-                annotationProcessorOptions {
-                    arguments = [
-                            //使用asXxx方法时必须，传入你依赖的RxJava版本
-                            rxhttp_rxjava: '3.1.1',
-                            rxhttp_package: 'rxhttp',  //指定RxHttp类包名，可随意指定
-                    ]
-                }
-            }
-        }
-
-    }
 
 }
 

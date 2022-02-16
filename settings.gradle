@@ -16,5 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "BasePlugin"
 include ':plugin'
-
 include ':test'
